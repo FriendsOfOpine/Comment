@@ -1,0 +1,32 @@
+{
+    "name": "foo/comment",
+    "type": "library",
+    "minimum-stability": "dev",
+    "description": "Comment Bundle",
+    "keywords": ["Comment"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Mahoney",
+            "email": "ryan@virtuecenter.com",
+            "homepage": "http://opine-php.org",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "phpunit/phpunit": "3.7.32",
+        "opine/config": "dev-master",
+        "opine/container": "dev-master",
+        "opine/pubsub": "dev-master",
+        "opine/route": "dev-master",
+        "opine/cache": "dev-master",
+        "opine/person": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+            "src/Comment/controllers",
+            "src/Comment/Route.php"
+        ]
+    }
+}
