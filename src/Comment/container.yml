@@ -1,10 +1,10 @@
 services:
     commentRoute:
-        class:      "Foo\CommentRoute"
+        class:      "Foo\Comment\Route"
         arguments:  ['@route']
     commentController:
-        class:      "Foo\CommentController"
+        class:      "Foo\Comment\Controller"
         arguments:  []
     commentApiController:
-        class:      "Foo\CommentApiController"
+        class:      "Foo\Comment\ApiController"
         arguments:  ["@config"]
