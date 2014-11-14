@@ -26,7 +26,8 @@
     "autoload": {
         "classmap": [
             "src/Comment/controllers",
-            "src/Comment/Route.php"
+            "src/Comment/Route.php",
+            "src/Comment/forms"
         ]
     }
 }

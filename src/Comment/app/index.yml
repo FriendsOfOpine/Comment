@@ -1,1 +1,5 @@
 regions:
+    post:
+        url: '/Comment/api/form/Post'
+        partial: 'Comment/forms/post.hbs'
+        type: 'Form'
