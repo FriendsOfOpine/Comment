@@ -1,11 +1,13 @@
 {{#if name}}
-	<h3 class="ui header floated right">{{name}}</h3>
+	<h3 class="ui header floated right">{{name}}</h3><a class="account-panel-toggle"></a>
 {{else}}
-	<div class="ui button account-panel-toggle">Login</div>
+	<div class="ui small button floated right account-panel-toggle">Login</div>
 {{/if}}
 <h3 class="ui header" style="display: inline">{{comment_count}}</h3>
 <div class="ui divider"></div>
-<form class="ui form {{login_status}}" method="POST" action="/Comment/api/form/Post">
+<form class="ui form {{status}}" method="POST" action="/Comment/api/form/Post" data-xhr="true">
     {{{post}}}
-    <input type="hidden" name="code" value="{{code}}">
+    <input type="hidden" name="Comment__Form__Post[code]" value="{{code}}">
+    <input type="hidden" name="Comment__Form__Post[authors]" value="{{authors}}">
+    <input type="hidden" name="Comment__Form__Post[url]" value="{{url}}">
 </form>

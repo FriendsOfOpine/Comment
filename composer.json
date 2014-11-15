@@ -28,7 +28,8 @@
             "src/Comment/controllers",
             "src/Comment/Route.php",
             "src/Comment/forms",
-            "src/Comment/models"
+            "src/Comment/models",
+            "src/Comment/collections"
         ]
     }
 }

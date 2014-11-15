@@ -10,4 +10,4 @@ services:
         arguments:  ["@config"]
     commentModel:
         class:      "Foo\Comment\Model"
-        argument:   ['@db']
+        arguments:   ['@db', '@post', '@person']

@@ -1,0 +1,3 @@
+topics:
+    Comment__Form__Post-save:
+        - commentModel@save
