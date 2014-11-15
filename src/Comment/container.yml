@@ -8,3 +8,6 @@ services:
     commentApiController:
         class:      "Foo\Comment\ApiController"
         arguments:  ["@config"]
+    commentModel:
+        class:      "Foo\Comment\Model"
+        argument:   ['@db']

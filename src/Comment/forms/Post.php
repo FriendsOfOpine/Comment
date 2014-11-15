@@ -28,9 +28,10 @@ class Post {
     function commentField() {
         return [
             'name'        => 'body',
-            'placeholder' => 'Comment',
+            'placeholder' => 'Your Comment',
             'display'     => 'Field\Textarea',
-            'required'    => true
+            'required'    => true,
+            'attributes'  => ['style' => 'resize: none']
         ];
     }
 }
