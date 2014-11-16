@@ -3,13 +3,14 @@ return function ($arguments, $options) {
     $layout = \Opine\container()->layout;
     $person = \Opine\container()->person;
     $commentModel = \Opine\container()->commentModel;
+    $secret = \Opine\container()->secret;
     $code = '';
     if (isset($options['code'])) {
         $code = $options['code'];
     }
     $authors = '';
     if (isset($options['authors'])) {
-        $authors = $options['authors'];
+        $authors = $secret->encrypt($options['authors']);
     }
     $url = '';
     if (isset($options['url'])) {
@@ -32,6 +33,7 @@ return function ($arguments, $options) {
     return $layout->
         app(['comment/index', 'Comment/index'])->
         context($context)->
+        url('comments', '/Comment/api/collection/Comments/byField-code-' . $code . '/1000/0/{"created_date":-1}')->
         layout(['comment/index', 'Comment/index'])->
         render();
 };

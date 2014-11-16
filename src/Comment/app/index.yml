@@ -3,3 +3,7 @@ regions:
         url: '/Comment/api/form/Post'
         partial: 'Comment/forms/post.hbs'
         type: 'Form'
+    comments:
+        url: '/Comment/api/collection/Comments'
+        partial: 'Comment/collections/comments.hbs'
+        type: 'Collection'

@@ -1,17 +1,18 @@
 <?php
 namespace Foo\Comment;
-use Comment\Collection\Comment as CommentCollection;
 use Exception;
 
 class Model {
     private $db;
     private $post;
     private $person;
+    private $secret;
 
-    public function __construct ($db, $post, $person) {
+    public function __construct ($db, $post, $person, $secret) {
         $this->db = $db;
         $this->post = $post;
         $this->person = $person;
+        $this->secret = $secret;
     }
 
     public function count ($code) {
@@ -33,12 +34,14 @@ class Model {
         $parentURI = $dbURI;
         $comment = [
             '_id'          => $commentId,
-            'body'         => $document['body'],
+            'body'         => strip_tags($document['body']),
             'code'         => $document['code'],
             'created_date' => $this->db->date(),
             'replies'      => [],
+            'votes'        => [],
             'reply_count'  => 0,
-            'status'       => ''
+            'status'       => 'pending',
+            'url'          => $document['url']
         ];
         if (isset($document['reply_to'])) {
             unset($comment['replies']);
@@ -53,10 +56,11 @@ class Model {
                 '_id' => $this->db->id($user['_id'])
             ];
             if (isset($document['authors']) || empty($document['authors'])) {
-                if (substr_count($document['authors'], ',')) {
-                    $authors = explode(',', $document['authors']);
+                $authors = $this->secret->decrypt($document['authors']);
+                if (substr_count($authors, ',')) {
+                    $authors = explode(',', $authors);
                 } else {
-                    $authors = [$document['authors']];
+                    $authors = [$authors];
                 }
                 if (in_array($user['email'], $authors)) {
                     $comment['moderator'] = true;
@@ -65,13 +69,10 @@ class Model {
         }
         $this->db->documentStage($dbURI)->upsert($comment);
         $context['formObject']->after = 'refresh';
-        if (isset($context['url'])) {
+        if (isset($document['url'])) {
             $context['formObject']->after = 'redirect';
-            $context['formObject']->redirect = $context['url'] . '#comment-' . (string)$commentId;
+            $context['formObject']->redirect = $document['url'] . '#comment-' . (string)$commentId;
         }
-        $collectionInstance = $this->collectionService->factory(new CommentCollection());
-        $managerUrl = '/Manager/item/Comment-comment/' . $parentURI;
-        $collectionInstance->index($dbURI, $comment, $managerUrl);
         $this->post->statusSaved();
     }
 }

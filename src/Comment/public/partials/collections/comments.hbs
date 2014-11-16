@@ -1,0 +1,18 @@
+{{#each comments}}
+<div class="comment">
+    <a name="comment-{{_id}}"></a>
+    <a class="avatar">
+        <img src="{{Gravitar email=user.email s="35"}}">
+    </a>
+    <div class="content">
+        <a class="author">{{user.name}}</a>
+        <div class="metadata">
+            <span class="date"><abbr class="time" data-livestamp="{{created_date.sec}}"></abbr></span>
+        </div>
+        <div class="text">{{body}}</div>
+        <div class="actions">
+            <a class="reply">Reply</a>
+        </div>
+    </div>
+</div>
+{{/each}}
