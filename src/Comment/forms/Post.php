@@ -31,7 +31,7 @@ class Post {
             'placeholder' => 'Your Comment',
             'display'     => 'Field\Textarea',
             'required'    => true,
-            'attributes'  => ['style' => 'resize: none']
+            'attributes'  => ['style' => 'resize: none; height: 5em; min-height: 5em;']
         ];
     }
 }

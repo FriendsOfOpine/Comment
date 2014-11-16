@@ -27,8 +27,11 @@ return function ($arguments, $options) {
     $user = $person->current();
     if (is_array($user)) {
         $context['name'] = $user['first_name'] . ' ' . $user['last_name'];
+        $context['email'] = $user['email'];
+        $context['status'] = 'comment-logged-in';
     } else {
         $context['status'] = 'comment-logged-out';
+        $context['email'] = '';
     }
     return $layout->
         app(['comment/index', 'Comment/index'])->
