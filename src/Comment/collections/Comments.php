@@ -1,5 +1,5 @@
 <?php
-namespace Collection;
+namespace Comment\Collection;
 
 class Comments {
     public $publishable = false;

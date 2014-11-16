@@ -40,7 +40,7 @@ class Route {
 
         $this->route->post('commentController@authFilter',
             '/Comment/api', [
-                '/{dburi}'          => 'commentApiController@upload'
+                '/vote/{dburi}'          => 'commentApiController@vote'
         ]);
     }
 
