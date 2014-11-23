@@ -4,6 +4,30 @@ $(function () {
         $(this).blur();
     });
 
+    $('form.comment-logged-in .ui.rating').rating({
+        onRate: function (value) {
+            var dbURI = $(this).closest('.comment').attr('data-dburi');
+            console.log(dbURI);
+            $.ajax({
+                type: "POST",
+                url: '/Comment/api/upvote/' + dbURI,
+                success: function (response) {
+                    consle.log(response);
+                },
+                error: function () {
+                    console.log('Error');
+                },
+                dataType: 'json'
+            });
+        }
+    }).popup({inline: true});
+
+    $('form.comment-logged-out .ui.rating').rating({
+        onRate: function (value) {
+            $(".account-panel-toggle").trigger("click");
+        }
+    });
+
     $('body').on({
         click: function () {
             $(this).closest('form').submit();
@@ -22,6 +46,7 @@ $(function () {
             $clone.attr('id', unique);
             $clone.append('<input type="hidden" name="Comment__Form__Post[reply_to]" value="' + replyto + '">');
             $content.append($clone);
+            $content.find('textarea').focus();
             $(this).unbind().removeClass('comment-reply').addClass('cancel-reply').attr('data-id', unique);
             $(this).html('Cancel Reply');
         }

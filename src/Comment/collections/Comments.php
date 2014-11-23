@@ -14,6 +14,23 @@ class Comments {
         ];
     }
 
+    public function chunk (&$documents) {
+        foreach ($documents as &$document) {
+            if (isset($document['replies']) && is_array($document['replies'])) {
+                foreach ($document['replies'] as &$reply) {
+                    $reply['_id'] = (string)$reply['_id'];
+                }
+            }
+        }
+        foreach ($documents as &$document) {
+            if (isset($document['likes']) && is_array($document['likes'])) {
+                foreach ($document['likes'] as &$like) {
+                    $like['_id'] = (string)$like['_id'];
+                }
+            }
+        }
+    }
+
     public function indexData () {
         return [
             ['keys' => ['code' => 1, 'created_date' -1]]

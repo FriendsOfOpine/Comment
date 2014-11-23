@@ -1,5 +1,5 @@
 {{#each comments}}
-<div class="comment">
+<div class="comment" data-dburi="{{dbURI}}">
     <a name="comment-{{_id}}"></a>
     <a class="avatar">
         <img src="{{Gravitar email=user.email s="35"}}">
@@ -11,10 +11,10 @@
         </div>
         <div class="text">{{body}}</div>
         <div class="actions">
-            <a class="reply comment-reply" data-replyto="{{_id}}">Reply</a>
+            <div class="ui star rating" data-rating="0" data-max-rating="1" data-content="Like this comment"></div> <a class="reply comment-reply" data-replyto="{{_id}}">Reply</a>
         </div>
         {{#each replies}}
-        <div class="comment">
+        <div class="comment" data-dburi="{{dbURI}}">
             <a name="comment-{{_id}}"></a>
             <a class="avatar">
                 <img src="{{Gravitar email=user.email s="35"}}">
@@ -25,6 +25,9 @@
                     <span class="date"><abbr class="time" data-livestamp="{{created_date.sec}}"></abbr></span>
                 </div>
                 <div class="text">{{body}}</div>
+                <div class="actions">
+                    <div class="ui star rating" data-rating="0" data-max-rating="1" data-content="Like this comment"></div>
+                </div>
             </div>
         </div>
         {{/each}}

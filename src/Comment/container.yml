@@ -7,7 +7,7 @@ services:
         arguments:  []
     commentApiController:
         class:      "Foo\Comment\ApiController"
-        arguments:  ["@config"]
+        arguments:  ["@config", '@commentModel']
     commentModel:
         class:      "Foo\Comment\Model"
         arguments:   ['@db', '@post', '@person', '@secret']

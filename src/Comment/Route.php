@@ -35,12 +35,13 @@ class Route {
     public function paths () {
         $this->route->get(
             '/Comment', [
-                '/index/{dburi}'    => 'commentController@index'
+                '/index/{code}'    => 'commentController@index'
         ]);
 
-        $this->route->post('commentController@authFilter',
+        $this->route->post(//'commentController@authFilter',
             '/Comment/api', [
-                '/vote/{dburi}'          => 'commentApiController@vote'
+                '/upvote/{dbURI}'            => 'commentApiController@upvote',
+                '/downvote/{dbURI}'          => 'commentApiController@downvote'
         ]);
     }
 

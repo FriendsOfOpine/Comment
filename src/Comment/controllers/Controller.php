@@ -1,6 +1,4 @@
 <?php
 namespace Foo\Comment;
 
-class CommentController {
-	
-}
+class Controller {}
