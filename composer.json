@@ -30,7 +30,8 @@
             "src/Comment/Route.php",
             "src/Comment/forms",
             "src/Comment/models",
-            "src/Comment/collections"
+            "src/Comment/collections",
+            "src/Comment/helpers"
         ]
     }
 }

@@ -11,3 +11,6 @@ services:
     commentModel:
         class:      "Foo\Comment\Model"
         arguments:   ['@db', '@post', '@person', '@secret']
+    helperComment:
+        class:      "Helper\Comment\Comment"
+        arguments:  ['@layout', '@person', '@commentModel', '@secret']
