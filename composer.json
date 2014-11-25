@@ -26,12 +26,12 @@
     },
     "autoload": {
         "classmap": [
-            "src/Comment/controllers",
-            "src/Comment/Route.php",
-            "src/Comment/forms",
-            "src/Comment/models",
-            "src/Comment/collections",
-            "src/Comment/helpers"
+            "src/Comment/app/controllers",
+            "src/Comment/app/Route.php",
+            "src/Comment/config/forms",
+            "src/Comment/app/models",
+            "src/Comment/config/collections",
+            "src/Comment/app/helpers"
         ]
     }
 }
