@@ -45,10 +45,9 @@ class Comment {
             $context['email'] = '';
         }
         return $this->layout->
-            app(['comment/index', 'Comment/index'])->
-            context($context)->
+            config(['comment/index', 'Comment/index'])->
             url('comments', '/Comment/api/collection/Comments/byField-code-' . $code . '/1000/0/{"created_date":-1}')->
-            layout(['comment/index', 'Comment/index'])->
+            container(['comment/index', 'Comment/index'], $context)->
             render();
     }
 }

@@ -109,7 +109,7 @@ class Model {
         $this->db->document($dbURI)->upsert($comment);
         $context['formObject']->after = 'refresh';
         if (isset($document['url'])) {
-            $context['formObject']->after = 'redirect';
+            $context['formObject']->after = 'refresh';
             $context['formObject']->redirect = $document['url'] . '#comment-' . (string)$commentId;
         }
         $parts = explode(':', $parentURI);
