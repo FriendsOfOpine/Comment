@@ -1,13 +1,15 @@
 <?php
 namespace Helper\Comment;
 
+use Opine\Interfaces\Layout as LayoutInterface;
+
 class Comment {
     private $layout;
     private $person;
     private $commentModel;
     private $secret;
 
-    public function __construct ($layout, $person, $commentModel, $secret) {
+    public function __construct (LayoutInterface $layout, $person, $commentModel, $secret) {
         $this->layout = $layout;
         $this->person = $person;
         $this->commentModel = $commentModel;

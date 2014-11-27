@@ -22,7 +22,8 @@
         "opine/route": "dev-master",
         "opine/cache": "dev-master",
         "opine/person": "dev-master",
-        "opine/secret": "dev-master"
+        "opine/secret": "dev-master",
+        "opine/interfaces": "dev-master"
     },
     "autoload": {
         "classmap": [
