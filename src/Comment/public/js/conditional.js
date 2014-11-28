@@ -4,14 +4,14 @@ if ($('a.comment-submit').length) {
         var $ = require('jquery');
         require('semantic');
         require('behaviors.js');
-        var cssPath = '../css/style.js';
         if ($('#opine-comment-config').length) {
             var config = JSON.parse($('#opine-comment-config').text());
-            if (typeof(config['cssPath']) !== 'undefined')
-                cssPath = config['cssPath'];
+            if (typeof(config['cssPath']) == 'undefined')
+                require('../css/style.js');
             }
+        } else {
+            require('../css/style.js');
         }
-        require(cssPath);
     });
 } else {
     console.log("Skipping Loading Opine Comment");
