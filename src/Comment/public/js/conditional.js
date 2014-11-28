@@ -3,14 +3,14 @@ if ($('a.comment-submit').length) {
     require.ensure([], function(require) {
         var $ = require('jquery');
         require('semantic');
-        require('behaviors.js');
+        require('./behaviors.js');
         if ($('#opine-comment-config').length) {
             var config = JSON.parse($('#opine-comment-config').text());
             if (typeof(config['cssPath']) == 'undefined') {
-                require('../css/style.js');
+                require('./../css/style.css');
             }
         } else {
-            require('../css/style.js');
+            require('./../css/style.css');
         }
     });
 } else {
