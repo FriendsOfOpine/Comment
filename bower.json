@@ -1,0 +1,12 @@
+{
+  "name": "foo-comment",
+  "version": "0.0.0",
+  "homepage": "https://github.com/FriendsOfOpine/Account",
+  "license": "MIT",
+  "main": [
+    "src/Account/public/js/conditional.js"
+  ],
+  "dependencies": {
+    "semantic": "1.0.0"
+  }
+}

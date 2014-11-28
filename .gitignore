@@ -1,4 +1,4 @@
 /vendor
 /composer.lock
 /report
-/cache/config.json
+/bower_components
