@@ -6,7 +6,7 @@ if ($('a.comment-submit').length) {
         require('behaviors.js');
         if ($('#opine-comment-config').length) {
             var config = JSON.parse($('#opine-comment-config').text());
-            if (typeof(config['cssPath']) == 'undefined')
+            if (typeof(config['cssPath']) == 'undefined') {
                 require('../css/style.js');
             }
         } else {
