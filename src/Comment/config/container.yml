@@ -1,16 +1,26 @@
 services:
     commentRoute:
-        class:      "Foo\Comment\Route"
-        arguments:  ['@route']
+        class: Foo\Comment\Route
+        arguments:
+            - @route
     commentController:
-        class:      "Foo\Comment\Controller"
-        arguments:  []
+        class: Foo\Comment\Controller
     commentApiController:
-        class:      "Foo\Comment\ApiController"
-        arguments:  ["@config", '@commentModel']
+        class: Foo\Comment\ApiController
+        arguments:
+            - @config
+            - @commentModel
     commentModel:
-        class:      "Foo\Comment\Model"
-        arguments:   ['@db', '@post', '@person', '@secret']
+        class: Foo\Comment\Model
+        arguments:
+            - @db
+            - @post
+            - @person
+            - @secret
     helperComment:
-        class:      "Helper\Comment\Comment"
-        arguments:  ['@layout', '@person', '@commentModel', '@secret']
+        class: Helper\Comment\Comment
+        arguments:
+            - @layout
+            - @person
+            - @commentModel
+            - @secret

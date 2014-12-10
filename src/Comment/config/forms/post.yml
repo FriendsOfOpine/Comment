@@ -1,0 +1,9 @@
+form:
+    slug: FooComment-Post
+    fields:
+        body:
+            placeholder: Your Comment
+            display: fieldTextarea@render
+            required: true
+            attributes:
+                style: resize: none; height: 5em; min-height: 5em;
