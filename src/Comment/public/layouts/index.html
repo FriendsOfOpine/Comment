@@ -5,7 +5,7 @@
 {{/if}}
 <h3 class="ui header" style="display: inline">{{comment_count}}</h3>
 <div class="ui divider"></div>
-<form class="ui form threaded comments {{status}}" method="POST" action="/Comment/api/form/Post" data-xhr="true">
+<form class="ui form threaded comments {{status}}" method="POST" action="/Comment/api/form/FooComment-Post" data-xhr="true">
     <div id="main-comment-post" class="comment">
         <a class="avatar">
             <img src="{{Gravitar email=email s="35"}}">
@@ -16,9 +16,9 @@
                 <ul class="list"></ul>
             </div>
             {{{post}}}
-            <input type="hidden" name="Comment__Form__Post[code]" value="{{code}}">
-            <input type="hidden" name="Comment__Form__Post[authors]" value="{{authors}}">
-            <input type="hidden" name="Comment__Form__Post[url]" value="{{url}}">
+            <input type="hidden" name="FooComment-Post[code]" value="{{code}}">
+            <input type="hidden" name="FooComment-Post[authors]" value="{{authors}}">
+            <input type="hidden" name="FooComment-Post[url]" value="{{url}}">
         </div>
     </div>
     <div class="ui divider"></div>

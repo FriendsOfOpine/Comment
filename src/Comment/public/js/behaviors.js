@@ -44,7 +44,7 @@ $(function () {
             });
             var replyto = $(this).attr('data-replyto');
             $clone.attr('id', unique);
-            $clone.append('<input type="hidden" name="Comment__Form__Post[reply_to]" value="' + replyto + '">');
+            $clone.append('<input type="hidden" name="FooComment-Post[reply_to]" value="' + replyto + '">');
             $content.append($clone);
             $content.find('textarea').focus();
             $(this).unbind().removeClass('comment-reply').addClass('cancel-reply').attr('data-id', unique);

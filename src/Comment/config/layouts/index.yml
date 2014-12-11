@@ -1,6 +1,6 @@
 regions:
     post:
-        url: /Comment/api/form/Post
+        url: /Comment/api/form/FooComment-Post
         partial: Comment/forms/post.hbs
         type: Form
     comments:
