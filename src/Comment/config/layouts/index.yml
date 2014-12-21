@@ -4,6 +4,6 @@ regions:
         partial: Comment/forms/post.hbs
         type: Form
     comments:
-        url: /Comment/api/collection/Comments
+        url: /Comment/api/collection/comments
         partial: Comment/collections/comments.hbs
         type: Collection

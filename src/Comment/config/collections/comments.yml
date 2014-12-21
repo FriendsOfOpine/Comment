@@ -1,0 +1,5 @@
+collection:
+    name: comments
+    plural_slug: comments
+    singular_slug: comment
+    publishable: false

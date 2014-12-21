@@ -1,0 +1,7 @@
+route:
+    GET:
+        /Comment/index/{code}:          commentController@index
+
+    POST:
+        /Comment/api/upvote/{dbURI}:    commentApiController@upvote
+        /Comment/api/downvote/{dbURI}:  commentApiController@downvote
