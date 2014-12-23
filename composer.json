@@ -19,7 +19,7 @@
         "opine/config": "dev-master",
         "opine/container": "dev-master",
         "opine/pubsub": "dev-master",
-        "opine/route": "dev-master",
+        "opine/route": "3.0.1",
         "opine/cache": "dev-master",
         "opine/person": "dev-master",
         "opine/secret": "dev-master",
