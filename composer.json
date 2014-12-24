@@ -7,31 +7,30 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Ryan Mahoney",
-            "email": "ryan@virtuecenter.com",
+            "name"    : "Ryan Mahoney",
+            "email"   : "ryan@virtuecenter.com",
             "homepage": "http://opine-php.org",
-            "role": "Developer"
+            "role"    : "Developer"
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "phpunit/phpunit": "3.7.32",
-        "opine/config": "dev-master",
-        "opine/container": "dev-master",
-        "opine/pubsub": "dev-master",
-        "opine/route": "3.0.1",
-        "opine/cache": "dev-master",
-        "opine/person": "dev-master",
-        "opine/secret": "dev-master",
-        "opine/interfaces": "dev-master"
+        "php"             : ">=5.4.0",
+        "opine/config"    : "3.0.1",
+        "opine/container" : "2.0.4",
+        "opine/pubsub"    : "2.0.1",
+        "opine/route"     : "3.0.3",
+        "opine/cache"     : "2.0.4",
+        "opine/person"    : "2.0.1",
+        "opine/secret"    : "2.0.1",
+        "opine/interfaces": "1.0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.32"
     },
     "autoload": {
         "classmap": [
             "src/Comment/app/controllers",
-            "src/Comment/app/Route.php",
-            "src/Comment/config/forms",
             "src/Comment/app/models",
-            "src/Comment/config/collections",
             "src/Comment/app/helpers"
         ]
     }
