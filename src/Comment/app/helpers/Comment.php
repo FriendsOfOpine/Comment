@@ -48,7 +48,7 @@ class Comment {
         }
         return $this->layout->
             config(['comment/index', 'Comment/index'], $context)->
-            url('comments', '/Comment/api/collection/Comments/byField-code-' . $code . '/1000/0/{"created_date":-1}')->
+            url('comments', '/Comment/api/collection/comments/byField:code:' . $code . '/1000/0/{"created_date":-1}')->
             container(['comment/index', 'Comment/index'])->
             render();
     }
